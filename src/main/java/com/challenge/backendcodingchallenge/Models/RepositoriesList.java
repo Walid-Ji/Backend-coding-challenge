@@ -6,7 +6,7 @@ import java.util.List ;
 /**
  *   this Class is used to store repositories retrieved from the Api
  */
-public class LanguagesList {
+public class RepositoriesList {
 
 
     private  List<Repository> items = new ArrayList<>();
