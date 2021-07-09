@@ -1,6 +1,6 @@
 package com.challenge.backendcodingchallenge.Service;
 
-import com.challenge.backendcodingchallenge.Models.LanguagesList;
+import com.challenge.backendcodingchallenge.Models.RepositoriesList;
 import com.challenge.backendcodingchallenge.Models.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,7 +35,7 @@ public class RepositoryServiceImpl implements RepositoryService {
         String stringDate = DateFor.format(today30);
 
         // we call external api of github to get list of 100 trending public repos on GitHub.
-        LanguagesList Repositories = restTemplate.getForObject("https://api.github.com/search/repositories?q=created:>" + stringDate + "&sort=stars&order=desc&per_page=100", LanguagesList.class);
+        RepositoriesList Repositories = restTemplate.getForObject("https://api.github.com/search/repositories?q=created:>" + stringDate + "&sort=stars&order=desc&per_page=100", RepositoriesList.class);
         return Repositories.getItems();
     }
 }
