@@ -23,12 +23,20 @@ public class LanguageController {
     @Autowired
     LanguageService languageService ;
 
+    /**
+     * Endpoint to get all repositories
+     * @return list of repositories (100 repositories)
+     */
     @RequestMapping(value = "/languages", method = RequestMethod.GET)
     public ResponseEntity getAllRepositories() {
         return ResponseEntity.ok(repositoryService.getAllRepositories());
     }
 
 
+    /**
+     * Endpoint to get language with number of repos using this language , and list of repos
+     * @return language object
+     */
     @RequestMapping(value = "/languages/lang", method = RequestMethod.GET)
     public ResponseEntity getLanguage(@RequestParam String lang) {
         return ResponseEntity.ok(languageService.getLanguage(lang));
